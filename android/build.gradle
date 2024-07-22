@@ -1,0 +1,61 @@
+group = "eu.epnw.dumble_audio"
+version = "1.0"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.3.0")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace = "eu.epnw.dumble_audio"
+    }
+
+    compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdk = 23
+    }
+}
+
+static String getFlutterDirectory() {
+    def osName = System.getProperty('os.name').toLowerCase()
+    def command = osName.contains('win') ? 'where flutter' : 'which flutter'
+    def proc = command.execute()
+    def flutterPath = proc.text.split('\n').first().trim()
+    if (proc.exitValue() != 0) {
+        throw new GradleException("Flutter command not found")
+    }
+    def path = new File(flutterPath).parent.toString()
+    return path
+}
+
+
+afterEvaluate {
+    if (System.properties['idea.active'] == 'true') {
+        println "Running in Android Studio"
+        dependencies {
+            compileOnly files(getFlutterDirectory() + '/cache/artifacts/engine/android-x64/flutter.jar')
+        }
+    }
+}

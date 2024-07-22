@@ -1,0 +1,22 @@
+name: frame_drop_transformer_example
+description: "An example to demonstrate the FrameDropTransformer of the dumble_audio plugin"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  dumble_audio:
+    path: ../..
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sample_f32le_16000_1

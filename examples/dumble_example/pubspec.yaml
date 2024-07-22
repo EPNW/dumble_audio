@@ -1,0 +1,23 @@
+name: dumble_example
+description: "Demonstrates how to use the dumble_audio plugin together with the dumble package to connect to a mumble server"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  dumble: ^0.8.9
+  opus_dart: ^3.0.1
+  opus_flutter: ^3.0.2
+  dumble_audio:
+    path: ../..
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

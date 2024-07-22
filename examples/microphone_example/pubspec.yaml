@@ -1,0 +1,25 @@
+name: microphone_example
+description: "An example for dumble_audio to show and test microphone capabilities"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  opus_dart: ^3.0.0
+  opus_flutter: ^3.0.1
+  dumble_audio:
+    path: ../..
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sample_f32le_16000_1
