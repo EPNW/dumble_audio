@@ -186,7 +186,9 @@ private var audioEngine: AudioEngine?;
         guard let events = self.eventSink else {
             return;
         }
-        events(self.dataToFlutterData(data: buffer));
+        DispatchQueue.main.async{
+            events(self.dataToFlutterData(data: buffer));
+        }
     }
 
     private func dataToFlutterData(data: Data )-> FlutterStandardTypedData {
