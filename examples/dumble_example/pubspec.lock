@@ -52,11 +52,12 @@ packages:
   dumble:
     dependency: "direct main"
     description:
-      name: dumble
-      sha256: "7b06fe246b185d180282c6304b89869f11897243474f52882c1ba7b0efc53838"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.9"
+      path: "."
+      ref: develop
+      resolved-ref: fd73275ca63c98f0b89a7de811b6485710432176
+      url: "https://github.com/EPNW/dumble"
+    source: git
+    version: "0.9.0"
   dumble_audio:
     dependency: "direct main"
     description:
@@ -111,14 +112,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  inject_js:
-    dependency: transitive
-    description:
-      name: inject_js
-      sha256: "3ab213e2c76375a611f57eb0044d32c6e18c5091d52510e7fe9f88f6bee83d19"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   js:
     dependency: transitive
     description:
@@ -186,59 +179,57 @@ packages:
   opus_dart:
     dependency: "direct main"
     description:
-      name: opus_dart
-      sha256: e8ab4774409997af33cbfdfe91a186854ed6458b2fec66b0e52f4434b1af2f7c
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
+      path: "."
+      ref: develop
+      resolved-ref: b000e3440372833d198e5202f495fcb92c502512
+      url: "https://github.com/EPNW/opus_dart"
+    source: git
+    version: "4.0.0"
   opus_flutter:
     dependency: "direct main"
     description:
-      name: opus_flutter
-      sha256: b7ce2396758578ef091d8388debe98e00e16c311e6c330301c448b5f4c09c27b
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.2"
+      path: opus_flutter
+      ref: develop
+      resolved-ref: d507340f6f3d9bcfb6f302ed528b8bb3d8461fc1
+      url: "https://github.com/EPNW/opus_flutter"
+    source: git
+    version: "4.0.0"
   opus_flutter_android:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: opus_flutter_android
-      sha256: "9e5b71f5d959e1ee3b5faf7e1e893aabe7955d3a234c83f02462d801a5218497"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
+      path: opus_flutter_android
+      ref: develop
+      resolved-ref: d507340f6f3d9bcfb6f302ed528b8bb3d8461fc1
+      url: "https://github.com/EPNW/opus_flutter"
+    source: git
+    version: "4.0.0"
   opus_flutter_ios:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: opus_flutter_ios
-      sha256: "6f6d8379009c4959b738128102d67e491da8ce80394473d8e49663d31d551a41"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
+      path: opus_flutter_ios
+      ref: develop
+      resolved-ref: d507340f6f3d9bcfb6f302ed528b8bb3d8461fc1
+      url: "https://github.com/EPNW/opus_flutter"
+    source: git
+    version: "4.0.0"
   opus_flutter_platform_interface:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: opus_flutter_platform_interface
-      sha256: "41180b74f1dacc131270d49815fd4eb46bd7cc5ad57aac84eab748d08de59138"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
-  opus_flutter_web:
-    dependency: transitive
-    description:
-      name: opus_flutter_web
-      sha256: "037a4cdb27c3a1c05c85aed3dbe0a4b8c2f49ccce33cef259ef34f1815af6785"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.3"
+      path: opus_flutter_platform_interface
+      ref: develop
+      resolved-ref: d507340f6f3d9bcfb6f302ed528b8bb3d8461fc1
+      url: "https://github.com/EPNW/opus_flutter"
+    source: git
+    version: "4.0.0"
   opus_flutter_windows:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: opus_flutter_windows
-      sha256: "6a26862dd331c9c4b5e4c805efe3dd4e4a049e4a18bee230d994c25d72928a3b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
+      path: opus_flutter_windows
+      ref: develop
+      resolved-ref: d507340f6f3d9bcfb6f302ed528b8bb3d8461fc1
+      url: "https://github.com/EPNW/opus_flutter"
+    source: git
+    version: "4.0.0"
   path:
     dependency: transitive
     description:
@@ -371,10 +362,10 @@ packages:
     dependency: transitive
     description:
       name: protobuf
-      sha256: "01dd9bd0fa02548bf2ceee13545d4a0ec6046459d847b6b061d8a27237108a08"
+      sha256: "68645b24e0716782e58948f8467fd42a880f255096a821f9e7d0ec625b00c84d"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "3.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -452,14 +443,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.1"
-  web_ffi:
-    dependency: transitive
-    description:
-      name: web_ffi
-      sha256: "48ef8037f7bc051d11b88d0f2903e02bec21092c51833d37c3361c36e3edc4f7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.2"
   xdg_directories:
     dependency: transitive
     description:

@@ -138,36 +138,52 @@ class _MyAppState extends State<MyApp> {
           child: Center(
               child: _loading
                   ? const CircularProgressIndicator()
-                  : Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-                      IconButton(
-                          icon: Icon(
-                            _micEnabled ? Icons.mic : Icons.mic_off,
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                          Text(
+                            'Opus codec version: ${opus.getOpusVersion()}',
+                            textAlign: TextAlign.center,
                           ),
-                          onPressed: _loading
-                              ? null
-                              : () async {
-                                  if (_micEnabled) {
-                                    endRecording();
-                                  } else {
-                                    startRecording();
-                                  }
-                                }),
-                      IconButton(
-                          icon: Icon(
-                            _speakerEnabled
-                                ? Icons.volume_up
-                                : Icons.volume_down,
+                          Text(
+                            'Connected to ${options.host}:${options.port} as ${options.name}',
+                            textAlign: TextAlign.center,
                           ),
-                          onPressed: _loading
-                              ? null
-                              : () async {
-                                  await DumbleAudio.setSpeaker(
-                                      !_speakerEnabled);
-                                  setState(() {
-                                    _speakerEnabled = !_speakerEnabled;
-                                  });
-                                })
-                    ])),
+                          Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                IconButton(
+                                    icon: Icon(
+                                      _micEnabled ? Icons.mic : Icons.mic_off,
+                                    ),
+                                    onPressed: _loading
+                                        ? null
+                                        : () async {
+                                            if (_micEnabled) {
+                                              endRecording();
+                                            } else {
+                                              startRecording();
+                                            }
+                                          }),
+                                IconButton(
+                                    icon: Icon(
+                                      _speakerEnabled
+                                          ? Icons.volume_up
+                                          : Icons.volume_down,
+                                    ),
+                                    onPressed: _loading
+                                        ? null
+                                        : () async {
+                                            await DumbleAudio.setSpeaker(
+                                                !_speakerEnabled);
+                                            setState(() {
+                                              _speakerEnabled =
+                                                  !_speakerEnabled;
+                                            });
+                                          })
+                              ])
+                        ])),
         ),
       ),
     );

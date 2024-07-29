@@ -1,18 +1,54 @@
 name: dumble_example
 description: "Demonstrates how to use the dumble_audio plugin together with the dumble package to connect to a mumble server"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
+
+# Note: Since this example is also used to test dumble,
+# opus_dart and opus_flutter, git dependencies and overrides are used. 
+# For your app, you should depend on the versions from pub.dev.
 dependencies:
   flutter:
     sdk: flutter
-  dumble: ^0.8.9
-  opus_dart: ^3.0.1
-  opus_flutter: ^3.0.2
+  dumble:
+    git:
+      url: https://github.com/EPNW/dumble
+      ref: develop
+  opus_dart:
+    git:
+      url: https://github.com/EPNW/opus_dart
+      ref: develop
+  opus_flutter:
+    git:
+      url: https://github.com/EPNW/opus_flutter
+      path: opus_flutter
+      ref: develop
   dumble_audio:
     path: ../..
+
+dependency_overrides:
+  opus_flutter_android:
+    git:
+      url: https://github.com/EPNW/opus_flutter
+      path: opus_flutter_android
+      ref: develop
+  opus_flutter_ios:
+    git:
+      url: https://github.com/EPNW/opus_flutter
+      path: opus_flutter_ios
+      ref: develop
+  opus_flutter_platform_interface:
+    git:
+      url: https://github.com/EPNW/opus_flutter
+      path: opus_flutter_platform_interface
+      ref: develop
+  opus_flutter_windows:
+    git:
+      url: https://github.com/EPNW/opus_flutter
+      path: opus_flutter_windows
+      ref: develop
 
 dev_dependencies:
   flutter_test:
