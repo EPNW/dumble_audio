@@ -8,5 +8,5 @@ dependencies:
   dumble_audio:
     git:
       url: https://github.com/EPNW/dumble_audio
-      ref: 0.4.3
+      ref: 0.4.4
 ```
