@@ -17,6 +17,14 @@ class DumbleAudio {
 
   static bool _hasPermission = false;
 
+  /// Returns the current permissions status.
+  ///
+  /// If [requestPermissions] was not invoked, or the user declined
+  /// microphone access, `false` will be returned.
+  ///
+  /// If the user has granted permissions, `true` is returned.
+  static bool get hasPermission => _hasPermission;
+
   /// Requests microphone permissions. Must be the first call to to plugin.
   ///
   /// If the user has not yet granted permissions, a system dialog will be shown.
@@ -65,7 +73,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> startEngine({
     AudioFormat recordingFormat = AudioFormat.standard,
     AudioFormat playingFormat = AudioFormat.standard,
@@ -97,7 +105,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> stopEngine() async {
     if (!_hasPermission) {
       return false;
@@ -113,7 +121,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> setMicrophone(bool enabled) async {
     if (!_hasPermission) {
       return false;
@@ -131,7 +139,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> setSpeaker(bool enabled) async {
     if (!_hasPermission) {
       return false;
@@ -150,7 +158,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> addTarget(int targetId) async {
     if (!_hasPermission) {
       return false;
@@ -163,7 +171,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> removeTarget(int targetId) async {
     if (!_hasPermission) {
       return false;
@@ -183,7 +191,7 @@ class DumbleAudio {
   ///
   /// If [requestPermissions] was not invoked, or the user declined
   /// microphone access, the method is a no-op and returns `false`.
-  /// If the user has granded permissions, the method returns `true`.
+  /// If the user has granted permissions, the method returns `true`.
   static Future<bool> scheduleBuffer(int targetId, Uint8List buffer) async {
     if (!_hasPermission) {
       return false;
